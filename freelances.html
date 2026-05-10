@@ -11,6 +11,190 @@
   </head>
   <body>
     <!-- Le contenu de la page sera ajoute ici -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="images/Afritalent1.jpeg" alt="Logo AfriTalent" width="40" height="40" />
+            <span>AfriTalent</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs target="#nav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link active" href="freelances.html">Freelances</a></li>
+              <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="btn btn-primary ms-lg-3">Rejoindre AfriTalent</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section id="freelances-hero" class="py-5 bg-light text-center" aria labelledby="freelances-title">
+      <div class="container">
+        <h1 id="freelances-title" class="fw-bold">Nos Freelances</h1>
+        <p class="text-muted">Découvrez nos talents tech disponibles pour vos projets partout en Afrique.</p>
+      </div>
+    </section>
+
+    <section
+      id="filters"
+      class="py-4 text-center"
+      aria-label="Filtrer les freelances par 
+catégorie"
+    >
+      <div class="container d-flex flex-wrap justify-content-center gap-2">
+        <button class="btn btn-dark filter-btn active" data-category="tous">Tous</button>
+        <button class="btn btn-outline-dark filter-btn" data category="developpement">Développement Web</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="design">Design UI/UX</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="marketing">Marketing Digital</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="data">Data & IA</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="redaction">Rédaction Tech</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="devops">DevOps & Cloud</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="Cybersécurité">Cybersécurité</button>
+        <button class="btn btn-outline-dark filter-btn" data-category="developpement mobile">developpement mobile</button>
+      </div>
+    </section>
+
+    <section id="freelances-grid" class="py-5" aria-labelledby="grid-title">
+      <div class="container">
+        <h2 id="grid-title" class="visually-hidden">Liste des freelances disponibles</h2>
+
+        <div class="row g-4">
+          <!-- CARD -->
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data category="developpement">
+              <div class="card-body text-center">
+                <img src="images/DJIBY1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5 class="card-title">Djiby Ndiaye</h5>
+                <p class="text-primary">Développeur Full Stack</p>
+                <p class="text-muted">Expert React, Node.js et MongoDB avec 5 ans d'expérience.</p>
+                <p class="fw-bold">35 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="design">
+              <div class="card-body text-center">
+                <img src="images/Salimata1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Salimata Dieye</h5>
+                <p class="text-primary">Designer UI/UX</p>
+                <p class="text-muted">Spécialiste Figma et design mobile.</p>
+                <p class="fw-bold">28 000 FCFA / heure</p>
+                <p class="text-warning">★★★★☆</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="marketing">
+              <div class="card-body text-center">
+                <img src="images/PAOMAR2.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Papa Omar Sow</h5>
+                <p class="text-primary">Marketing Digital</p>
+                <p class="text-muted">Expert SEO et Google Ads.</p>
+                <p class="fw-bold">22 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="data">
+              <div class="card-body text-center">
+                <img src="images/Adji1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Adji Ndiaye</h5>
+                <p class="text-primary">Data Scientist</p>
+                <p class="text-muted">Machine Learning & Python.</p>
+                <p class="fw-bold">45 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="devops">
+              <div class="card-body text-center">
+                <img src="images/Fatou1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Fatou Sagna</h5>
+                <p class="text-primary">DevOps</p>
+                <p class="text-muted">Docker, Kubernetes, AWS.</p>
+                <p class="fw-bold">42 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="devops">
+              <div class="card-body text-center">
+                <img src="images/NGAGNE1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Ngagne Dieye</h5>
+                <p class="text-primary">Cybersécurité Réseau</p>
+                <p class="text-muted">Spécialiste Sécurité réseau et protection des données.</p>
+                <p class="fw-bold">45 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="devops">
+              <div class="card-body text-center">
+                <img src="images/AWA1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Awa Ndoye</h5>
+                <p class="text-primary">Développement mobile</p>
+                <p class="text-muted">Experte Flutter et Application Android/IOS</p>
+                <p class="fw-bold">38 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="devops">
+              <div class="card-body text-center">
+                <img src="images/FALLOMAR1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Omar Fall</h5>
+                <p class="text-primary">Ingénieur Cloud</p>
+                <p class="text-muted">Spécialiste Microsoft Azure et infrastructures cloud.</p>
+                <p class="fw-bold">48 000 FCFA / heure</p>
+                <p class="text-warning">★★★★★</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm freelance-card" data-category="redaction">
+              <div class="card-body text-center">
+                <img src="images/AMINA1.jpeg" class="rounded-circle mb-3" width="80" height="80" />
+                <h5>Amina Ndoye</h5>
+                <p class="text-primary">Rédaction Tech</p>
+                <p class="text-muted">Contenu SEO et documentation.</p>
+                <p class="fw-bold">18 000 FCFA / heure</p>
+                <p class="text-warning">★★★★☆</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Bootstrap 5 via CDN : script JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Votre script JavaScript -->

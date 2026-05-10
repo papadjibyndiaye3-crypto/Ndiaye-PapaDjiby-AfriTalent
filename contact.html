@@ -11,6 +11,121 @@
   </head>
   <body>
     <!-- Le contenu de la page sera ajoute ici -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="images/Afritalent1.jpeg" alt="Logo AfriTalent" width="40" height="40" />
+            <span>AfriTalent</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs target="#nav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+              <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+              <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html" class="btn btn-primary ms-lg-3">Rejoindre AfriTalent</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="contact-hero"
+      class="py-5 bg-light text-center"
+      aria-labelledby="contact
+title"
+    >
+      <div class="container">
+        <h1 id="contact-title" class="fw-bold">Contactez-nous</h1>
+        <p class="text-muted">Une question, une suggestion ou envie de rejoindre AfriTalent ? Nous sommes là.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact-section" class="py-5" aria-labelledby="form-title">
+      <div class="container">
+        <div class="row g-5">
+          <!-- FORMULAIRE -->
+          <div class="col-lg-7">
+            <h2 id="form-title" class="fw-bold mb-4">Envoyez-nous un message</h2>
+
+            <form id="contactForm" novalidate class="card shadow-sm p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nom" class="form-label">Nom *</label>
+                  <input type="text" id="nom" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="prenom" class="form-label">Prénom *</label>
+                  <input type="text" id="prenom" class="form-control" required />
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" id="email" class="form-control" required />
+                </div>
+
+                <div class="col-12">
+                  <label for="sujet" class="form-label">Sujet *</label>
+                  <select id="sujet" class="form-select" required>
+                    <option value="">-- Choisissez un sujet --</option>
+                    <option>Inscription</option>
+                    <option>Mission</option>
+                    <option>Technique</option>
+                    <option>Facturation</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="form-label">Message *</label>
+                  <textarea id="message" class="form-control" rows="5" minlength="20" required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-4">Envoyer le message</button>
+
+              <div id="success-message" class="alert alert-success mt-3 d-none">Votre message a bien été envoyé !</div>
+            </form>
+          </div>
+
+          <!-- INFOS -->
+          <div class="col-lg-5">
+            <aside class="p-4 bg-light rounded shadow-sm">
+              <h2 class="fw-bold mb-3">Nos coordonnées</h2>
+
+              <p><strong>Email :</strong> <a href="mailto:contact@afritalent.com">contact@afritalent.com</a></p>
+              <p><strong>Téléphone :</strong> <a href="tel:+221783541746">+221 78 354 17 46</a></p>
+              <p><strong>Adresse :</strong> Dakar, Sénégal</p>
+              <p><strong>Horaires :</strong> Lun - Ven, 8h - 18h</p>
+            </aside>
+
+            <!-- MAP -->
+            <div class="mt-4 rounded overflow-hidden shadow-sm">
+              <iframe
+                src="https://www.google.com/maps?q=Dakar,Senegal&output=embed"
+                width="100%"
+                height="250"
+                style="border: 0"
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Bootstrap 5 via CDN : script JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Votre script JavaScript -->

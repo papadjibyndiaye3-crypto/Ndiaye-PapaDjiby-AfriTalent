@@ -470,10 +470,8 @@ footer .border-light {
   border-radius: var(--rayon);
   display: block;
 }
-/*  
-ANIMATIONS AU SCROLL 
-Classes ajoutées par IntersectionObserver en JavaScript 
-*/
+/*  ANIMATIONS AU SCROLL */
+
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -537,4 +535,154 @@ Classes ajoutées par IntersectionObserver en JavaScript
     height: 40px;
     font-size: 1rem;
   }
+}
+/* BENTO GRID "Comment ça marche*/
+
+#how-it-works .row {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+#how-it-works .row > div {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+#how-it-works .row > div:nth-child(1) {
+  flex: 2 1 300px;
+}
+
+#how-it-works .row > div:nth-child(4) {
+  flex: 2 1 300px;
+}
+
+/* Style des cartes */
+#how-it-works .card {
+  border: none;
+  border-radius: var(--rayon);
+  transition: var(--transition);
+  border-top: 4px solid var(--couleur-primaire);
+  height: 100%;
+}
+
+#how-it-works .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-hover) !important;
+}
+
+#how-it-works .card-body span.text-primary {
+  font-family: var(--font-titre);
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0.4;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  #how-it-works .row > div,
+  #how-it-works .row > div:nth-child(1),
+  #how-it-works .row > div:nth-child(4) {
+    flex: 1 1 100%;
+  }
+}
+
+/* EFFETS HOVER CATÉGORIES */
+
+#categories .bg-white {
+  border-radius: var(--rayon) !important;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ligne bleue animée en bas au hover */
+
+#categories .bg-white::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--couleur-primaire);
+  transition: width 0.3s ease;
+}
+
+#categories .bg-white:hover::after {
+  width: 100%;
+}
+
+#categories .bg-white:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-hover) !important;
+  border-color: var(--couleur-primaire);
+}
+
+/*RESPONSIVE BENTO GRID */
+
+@media (max-width: 768px) {
+  #how-it-works .row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #how-it-works .row > div:nth-child(1),
+  #how-it-works .row > div:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  #how-it-works .row > div:nth-child(4) {
+    grid-column-start: auto;
+  }
+}
+
+/* Mobile — 1 colonne */
+@media (max-width: 480px) {
+  #how-it-works .row {
+    grid-template-columns: 1fr !important;
+  }
+
+  #how-it-works .row > div {
+    grid-column: span 1 !important;
+    grid-column-start: auto !important;
+  }
+}
+/* Bouton "Je cherche un Freelance" */
+
+#hero .btn-outline-dark {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+#hero .btn-outline-dark:hover {
+  background-color: #ffffff !important;
+  color: var(--couleur-primaire) !important;
+  transform: translateY(-2px);
+}
+/* FILTRES FREELANCES — Tous les boutons de filtre*/
+
+.filter-btn {
+  border-radius: 50px !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  transition: var(--transition);
+  border: 2px solid var(--couleur-dark) !important;
+  color: var(--couleur-dark) !important;
+  background-color: transparent !important;
+}
+
+/* Bouton actif (sélectionné) */
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--couleur-primaire) !important;
+  border-color: var(--couleur-primaire) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: var(--ombre-hover);
 }

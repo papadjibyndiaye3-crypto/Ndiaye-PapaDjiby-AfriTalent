@@ -686,3 +686,170 @@ footer .border-light {
   transform: translateY(-2px);
   box-shadow: var(--ombre-hover);
 }
+/* COMMIT 5 — RESPONSIVE DESIGN */
+
+/* TABLETTE — 768px */
+@media (max-width: 768px) {
+  /* Navbar — liens cachés, hamburger visible */
+  .navbar-nav {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  /* Hero — tout centré */
+  #hero {
+    text-align: center;
+    background-attachment: scroll; /* Parallaxe désactivé sur mobile */
+  }
+
+  #hero .d-flex {
+    justify-content: center;
+  }
+
+  #hero .col-lg-6:last-child {
+    display: none; /* Cache l'image sur tablette */
+  }
+
+  /* Stats — 1 colonne */
+  #stats-section .col-md-4 {
+    margin-bottom: 1rem;
+  }
+
+  /* Bento Grid — 2 colonnes */
+  #how-it-works .row > div,
+  #how-it-works .row > div:nth-child(1),
+  #how-it-works .row > div:nth-child(4) {
+    flex: 1 1 45%;
+  }
+
+  /* Catégories — 2 colonnes */
+  #categories .col-md-4 {
+    width: 50%;
+  }
+
+  /* Témoignages — 1 colonne */
+  #testimonials .col-md-4 {
+    width: 100%;
+  }
+
+  /* Tarifs — 1 colonne */
+  #pricing-plans .col-md-4 {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #pricing-plans .col-md-4:nth-child(2) .card {
+    transform: scale(1);
+  }
+
+  /* Équipe — 2 colonnes */
+  #team .col-lg-3 {
+    width: 50%;
+  }
+
+  /* Valeurs — 2 colonnes */
+  #values .col-lg-3 {
+    width: 50%;
+  }
+
+  /* Footer — 2 colonnes */
+  footer .col-md-3 {
+    width: 50%;
+  }
+
+  /* Contact — 1 colonne */
+  #contact-section .col-lg-7,
+  #contact-section .col-lg-5 {
+    width: 100%;
+  }
+}
+
+/* MOBILE — 375px */
+@media (max-width: 480px) {
+  /* Typographie réduite */
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  /* Hero */
+  #hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #hero .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #hero .d-flex {
+    flex-direction: column;
+  }
+
+  /* Stats — 1 colonne */
+  #stats-section .col-md-4 {
+    width: 100%;
+  }
+
+  #stats-section .counter {
+    font-size: 1.8rem;
+  }
+
+  /* Bento Grid — 1 colonne */
+  #how-it-works .row > div,
+  #how-it-works .row > div:nth-child(1),
+  #how-it-works .row > div:nth-child(4) {
+    flex: 1 1 100%;
+  }
+
+  /* Catégories — 1 colonne */
+  #categories .col-md-4 {
+    width: 100%;
+  }
+
+  /* Filtres freelances */
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  /* Freelances — 1 colonne */
+  #freelances-grid .col-md-6,
+  #freelances-grid .col-lg-4 {
+    width: 100%;
+  }
+
+  /* Tarifs — 1 colonne */
+  #pricing-plans .col-md-4 {
+    width: 100%;
+  }
+
+  /* Équipe — 1 colonne */
+  #team .col-md-6,
+  #team .col-lg-3 {
+    width: 100%;
+  }
+
+  /* Valeurs — 1 colonne */
+  #values .col-md-6,
+  #values .col-lg-3 {
+    width: 100%;
+  }
+
+  /* Chiffres clés */
+  #key-numbers .col-md-3 {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  /* Footer — 1 colonne */
+  footer .col-md-3 {
+    width: 100%;
+  }
+}

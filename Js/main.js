@@ -145,3 +145,72 @@ window.addEventListener("scroll", function () {
 backToTop.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+/* COMPTEURS ANIMÉS AU SCROLL */
+const counters = document.querySelectorAll(".counter");
+
+/* Mettre tous les compteurs à 0 au chargement */
+counters.forEach(function (counter) {
+  counter.textContent = "0";
+});
+
+function animerCompteur(counter) {
+  counter.textContent = "0";
+  const cible = parseInt(counter.getAttribute("data-target"));
+  const duree = 2000;
+  const increment = cible / (duree / 16);
+  let valeurActuelle = 0;
+
+  if (counter.timer) clearInterval(counter.timer);
+
+  counter.timer = setInterval(function () {
+    valeurActuelle += increment;
+    if (valeurActuelle >= cible) {
+      counter.textContent = "+" + cible.toLocaleString();
+      clearInterval(counter.timer);
+    } else {
+      counter.textContent = "+" + Math.floor(valeurActuelle).toLocaleString();
+    }
+  }, 16);
+}
+
+const observerCompteur = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animerCompteur(entry.target);
+      } else {
+        if (entry.target.timer) clearInterval(entry.target.timer);
+        entry.target.textContent = "0";
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
+
+counters.forEach(function (counter) {
+  observerCompteur.observe(counter);
+});
+
+/*  ANIMATIONS FADE-IN AU SCROLL */
+const sections = document.querySelectorAll("section");
+
+sections.forEach(function (section) {
+  section.classList.add("fade-in");
+});
+
+const observerFadeIn = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observerFadeIn.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
+
+sections.forEach(function (section) {
+  observerFadeIn.observe(section);
+});

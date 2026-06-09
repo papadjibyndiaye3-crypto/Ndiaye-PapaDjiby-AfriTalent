@@ -214,3 +214,125 @@ const observerFadeIn = new IntersectionObserver(
 sections.forEach(function (section) {
   observerFadeIn.observe(section);
 });
+/* ============================================================
+   9. FILTRAGE DYNAMIQUE DES FREELANCES
+============================================================ */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const freelanceCards = document.querySelectorAll(".freelance-card");
+
+filterBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    filterBtns.forEach(function (b) {
+      b.classList.remove("active");
+      b.classList.remove("btn-dark");
+      b.classList.add("btn-outline-dark");
+    });
+
+    this.classList.add("active");
+    this.classList.remove("btn-outline-dark");
+    this.classList.add("btn-dark");
+
+    const categorie = this.getAttribute("data-category");
+
+    freelanceCards.forEach(function (card) {
+      const col = card.closest('[class*="col"]');
+      if (categorie === "tous") {
+        if (col) col.style.display = "block";
+      } else if (card.getAttribute("data-category") === categorie) {
+        if (col) col.style.display = "block";
+      } else {
+        if (col) col.style.display = "none";
+      }
+    });
+  });
+});
+
+/* ============================================================
+   10. VALIDATION FORMULAIRE DE CONTACT
+   + Affichage des données dans la console
+============================================================ */
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nom = document.getElementById("nom");
+    const prenom = document.getElementById("prenom");
+    const email = document.getElementById("email");
+    const sujet = document.getElementById("sujet");
+    const message = document.getElementById("message");
+    const successMsg = document.getElementById("success-message");
+
+    let formulaireValide = true;
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    /* Vérification Nom */
+    if (nom.value.trim() === "") {
+      nom.classList.add("is-invalid");
+      nom.classList.remove("is-valid");
+      formulaireValide = false;
+    } else {
+      nom.classList.add("is-valid");
+      nom.classList.remove("is-invalid");
+    }
+
+    /* Vérification Prénom */
+    if (prenom.value.trim() === "") {
+      prenom.classList.add("is-invalid");
+      prenom.classList.remove("is-valid");
+      formulaireValide = false;
+    } else {
+      prenom.classList.add("is-valid");
+      prenom.classList.remove("is-invalid");
+    }
+
+    /* Vérification Email */
+    if (!regexEmail.test(email.value)) {
+      email.classList.add("is-invalid");
+      email.classList.remove("is-valid");
+      formulaireValide = false;
+    } else {
+      email.classList.add("is-valid");
+      email.classList.remove("is-invalid");
+    }
+
+    /* Vérification Sujet */
+    if (sujet.value === "") {
+      sujet.classList.add("is-invalid");
+      sujet.classList.remove("is-valid");
+      formulaireValide = false;
+    } else {
+      sujet.classList.add("is-valid");
+      sujet.classList.remove("is-invalid");
+    }
+
+    /* Vérification Message (min 20 caractères) */
+    if (message.value.trim().length < 20) {
+      message.classList.add("is-invalid");
+      message.classList.remove("is-valid");
+      formulaireValide = false;
+    } else {
+      message.classList.add("is-valid");
+      message.classList.remove("is-invalid");
+    }
+
+    /* Si tout est valide → afficher dans console + message succès */
+    if (formulaireValide) {
+      /* Afficher les données dans la console */
+      console.log(" NOUVEAU MESSAGE REÇU ");
+      console.log("Nom :", nom.value);
+      console.log("Prénom :", prenom.value);
+      console.log("Email :", email.value);
+      console.log("Sujet :", sujet.value);
+      console.log("Message :", message.value);
+      console.log("============================");
+
+      /* Cacher le formulaire et afficher le message de succès */
+      contactForm.style.display = "none";
+      if (successMsg) {
+        successMsg.classList.remove("d-none");
+      }
+    }
+  });
+}
